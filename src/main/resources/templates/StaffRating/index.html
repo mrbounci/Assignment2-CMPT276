@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdeliver.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <main class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <h1>RATINGS</h1>
+                <ul>
+                    <li th:each="rating:${rate}">
+                        <span th:text="${rating.name}"></span> <br>
+                        <span th:text="${rating.email}"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
