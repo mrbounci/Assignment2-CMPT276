@@ -1,7 +1,14 @@
 package com.local.asn2.models;
 
+import jakarta.persistence.*;
+
+
+@Entity
+@Table(name="staff_rating")
 public class StaffRating {
-    public int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public int uid;
     private String name;
     private String email;
     private RoleType roleType;
@@ -10,9 +17,11 @@ public class StaffRating {
     private int knowledgeableScore;
     private String comment;
 
-    public StaffRating(int id, String name, String email, RoleType roleType, int clarity, int niceness,
+    public StaffRating() {
+    }
+
+    public StaffRating(String name, String email, RoleType roleType, int clarity, int niceness,
             int knowledgeableScore, String comment) {
-        this.id = id;
         this.name = name;
         this.email = email;
         this.roleType = roleType;
@@ -22,7 +31,6 @@ public class StaffRating {
         this.comment = comment;
     }
 
-    public int getId() { return id; }
     public String getName() { return name; }
     public String getEmail() { return email; }
     public RoleType getRoleType() { return roleType; }
@@ -30,4 +38,37 @@ public class StaffRating {
     public int getNiceness() { return niceness; }
     public int getKnowledgeableScore() { return knowledgeableScore; }
     public String getComment() { return comment; }
+    public int getUid() { return uid; }
+
+    public void setUid(int uid) {
+        this.uid = uid;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setRoleType(RoleType roleType) {
+        this.roleType = roleType;
+    }
+
+    public void setClarity(int clarity) {
+        this.clarity = clarity;
+    }
+
+    public void setNiceness(int niceness) {
+        this.niceness = niceness;
+    }
+
+    public void setKnowledgeableScore(int knowledgeableScore) {
+        this.knowledgeableScore = knowledgeableScore;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 }
