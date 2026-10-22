@@ -1,25 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdeliver.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Ratings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <main class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <h1>RATINGS</h1>
-                <ul>
-                    <li th:each="rating:${rate}">
-                        <span th:text="${rating.name}"></span> <br>
-                        <span th:text="${rating.email}"></span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </main>
+    <div class="container mt-4">
+        <h1>Staff Ratings</h1>
+
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Clarity</th>
+                    <th>Niceness</th>
+                    <th>Knowledge</th>
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="r:${rate}">
+                    <td th:text="${r.uid}"></td>
+                    <td th:text="${r.name}"></td>
+                    <td th:text="${r.email}"></td>
+                    <td th:text="${r.roleType}"></td>
+                    <td th:text="${r.clarity}"></td>
+                    <td th:text="${r.niceness}"></td>
+                    <td th:text="${r.knowledgeableScore}"></td>
+                    <td th:text="${r.comment}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
